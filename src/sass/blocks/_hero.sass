@@ -1,0 +1,81 @@
+.hero 
+  &-text 
+    margin-top: 215px
+    &__title 
+      max-width: 1010px
+      margin-bottom: 33px
+      +black
+      font-size: 48px
+      line-height: 68px
+    &__description
+      max-width: 800px
+      margin-bottom: 66px
+      font-size: 18px
+      line-height: 28px
+  &-link 
+    position: relative
+    margin-left: 103px
+    padding-bottom: 2px
+    z-index: 0
+    display: inline-block
+    color: $main-color
+    text-decoration: none
+    transition: color 450ms linear 264ms
+    &:before 
+      content: ''
+      position: absolute
+      bottom: 0
+      height: 45%
+      left: -0.15em
+      right: -0.15em
+      background: $main-color
+      opacity: 0.3
+      background-size: 100% 100%
+      background-repeat: repeat-x
+      transition: 380ms transform cubic-bezier(0.165, 0.84, 0.44, 1)
+      transform-origin: 50% 100%
+      transform: scale(0.98, 0) translateZ(0)
+      backface-visibility: hidden
+      z-index: -1
+    &:after 
+      content: ''
+      position: absolute
+      bottom: 0
+      height: 1px
+      left: -0.025em
+      right: -0.075em
+      background: $main-color
+      background-size: 100% 100%
+      transition: 190ms opacity cubic-bezier(0.895, 0.03, 0.685, 0.22), background 450ms linear 264ms
+      transform: translateZ(0)
+    &:hover 
+      &:before 
+        transform: scale(1, 0.98) translateZ(0)
+      &:after 
+        opacity: 0
+        transition: 126ms opacity cubic-bezier(0.165, 0.84, 0.44, 1)
+
+@media (max-width: 1024px)
+    .hero 
+      &-text 
+        margin-top: 150px
+@media (max-width: 768px)
+  .hero 
+    &-text 
+      &__title 
+        font-size: 34px
+        line-height: 50px
+      &__description 
+        font-size: 16px
+@media (max-width: 425px)
+  .hero 
+    &-text 
+      &__title 
+        margin-bottom: 18px
+        font-size: 24px
+        line-height: 40px
+      &__description 
+        font-size: 14px
+        line-height: 24px
+    &-link 
+      margin-left: 0

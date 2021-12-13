@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Евгений Шибин | UX/UI-дизайн и брендирование</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="img/favicon.png" type="image/png">
@@ -11,44 +11,70 @@
 <body>
   
   <main>
-  
-  <section class="hero">
-    <div class="container">
-      <nav class="navbar">
-        <div class="navbar-block">
-          <div class="navbar-block__logo">Car Wash</div>
-          <!-- /.navbar-block__logo -->
-          <div class="navbar-block__info">
-            <div class="navbar-block__info-item">Автовладельцам</div>
-            <div class="navbar-block__info-item">Владельцам автомоек</div>
-            <div class="navbar-block__info-button">Подать заявку</div>
+
+    <header class="header">
+
+      <div class="container">
+
+        <div class="header-block">
+
+          <div class="header-logo">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24.2407 39.751L2.33195 17.6763C2.16598 17.5104 2 17.3444 2 17.0124V11.0373C2 10.8714 2 10.5394 2.33195 10.3734C2.6639 9.87552 3.3278 9.87552 3.65975 10.3734L19.2614 25.9751H30.5477L46.1494 10.3734C46.6473 9.87552 47.1452 9.87552 47.6431 10.3734C47.8091 10.5394 47.8091 10.8714 47.8091 11.0373V17.0124C47.8091 17.3444 47.8091 17.5104 47.6431 17.6763L25.5685 39.751C25.2365 40.083 24.5726 40.083 24.2407 39.751Z" fill="#1E2128"/>
+            </svg>          
           </div>
-          <!-- /.navbar-block__info -->
-        </div>
-      </nav>
-      <!-- /.navbar -->
-      <div class="hero-block">
-        <div class="hero-text">
-          <div class="hero-text__subtitle">Уникальное приложение для записи на автомойку</div>
-          <!-- /.hero-text__subtitle -->
-          <div class="hero-text__title">Бронируй автомойку легко и быстро</div>
-          <!-- /.hero-text__title -->
-          <div class="hero-text__description">
-            Все автомойки города в одном приложении. Забронируй автомойку одним нажатием кнопки. Сохраняй понравившиеся автомойки в закладки.
+
+          <div class="menu">
+            <a class="target-burger">
+              <ul class="buns">
+                <li class="bun" id="line-1"></li>
+                <li class="bun" id="line-2"></li>
+              </ul>
+            </a>
           </div>
-          <!-- /.hero-text__description -->
+          <nav class="main-nav" role="navigation">
+            <ul>
+              <li><a class="item" href="#">Все проекты</a></li>
+              <li><a class="item" href="#">Обо мне</a></li>
+              <li><a class="item email" href="mailto:info@evgeniyshibin.ru">info@evgeniyshibin.ru</a></li>
+            </ul>
+          </nav>
+
         </div>
-        <!-- /.hero-text -->
-        <div class="hero-image"></div>
-        <!-- /.hero-image -->
+        <!-- /.header-block -->
+
       </div>
-      <!-- /.hero-block -->
-    </div>
-    <!-- /.container -->
-  </section>
-  <!-- /.hero -->
+      <!-- /.container -->
+
+    </header>
+    <!-- /.header -->
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-block">
+          <div class="hero-text">
+            <div class="hero-text__title">Меня зовут Евгений. Я специализируюсь на UX/UI-дизайне и брендировании.</div>
+            <!-- /.hero-text__title -->
+            <div class="hero-text__description">Занимаюсь проектированием интерфейсов ЛК/ПА, моб. приложений (web/Android/iOS), маркетплейсов/интернет-магазинов и промо-/целевых страниц.</div>
+            <!-- /.hero-text__description -->
+          </div>
+          <!-- /.hero-text -->
+
+          <a href="#" class="hero-link">Обо мне&nbsp;&nbsp;&nbsp;></a>
+
+        </div>
+        <!-- /.hero-block -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.hero -->
 
   </main>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <script src="js/main.js"></script>
 
 </body>
 </html>

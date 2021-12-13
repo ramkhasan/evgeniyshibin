@@ -2,60 +2,54 @@
   box-sizing: border-box    
 body
   position: relative
-  color: $text-color
-  height: 100%
-  background: $white-color
-  font-family: 'Gilroy Regular', sans-serif;
+  color: $main-color
+  // height: 100%
+  height: 1000vh
+  background: $bg-color
+  font-family: 'Inter Regular', sans-serif
 img
   max-width: 100%
 main 
   position: relative
   overflow: hidden
+ul, ol 
+  margin: 0
+  padding: 0
+ul 
+  list-style:none
+nav ul, nav ol 
+  list-style: none
+  margin: 0
+  padding: 0
 .container
-  position: relative
+  // position: relative
   width: 1110px
   margin: auto
 .section
   padding: 0 0 80px
   &-title 
-    font-family: 'Gilroy Bold', sans-serif
+    font-family: 'Inter Regular', sans-serif
     font-size: 36px
     text-align: center
     margin: auto
     padding-bottom: 74px
 .button 
   padding: 19px 80px
-  background: linear-gradient(180deg, $main-color 0%, $second-color 96.15%);
-  box-shadow: 0px 4px 25px rgba(0, 69, 150, 0.08), 0px 8px 50px rgba(0, 69, 150, 0.16);
-  border-radius: 6px;
+  // background: linear-gradient(180deg, $main-color 0%, $second-color 96.15%)
+  box-shadow: 0px 4px 25px rgba(0, 69, 150, 0.08), 0px 8px 50px rgba(0, 69, 150, 0.16)
+  border-radius: 6px
   border: none
   cursor: pointer
   transition: ease 0.3s
-  &:hover
-    transform: scale(1.03)
-    background-color: lighten($second-color, 5%)
-    box-shadow: 0 10px 30px rgba($second-color, 0.7)
-  &:active
-    background-color: lighten($second-color, 10%)
-    transform: scale(.98)
-  &:focus
-    box-shadow: 0px 1px 0px $main-color, 0px -1px 0px $main-color, 1px 0px 0px $main-color, -1px 0px 0px $main-color
- 
-/* Стилизация полей формы */
-input
-  caret-color: $second-color
-  &:focus
-    border: 1px solid $second-color
-  &::placeholder
-    opacity: 0.5
-input 
-  -webkit-appearance: none
-input.error
-  border: 1px solid red
-#name-error, #phone-error, #email-error, #password-error, #last_name-error, #password_conf-error, #code-error
-  display: block
-  font-size: 12px
-  color: red
+  // &:hover
+  //   transform: scale(1.03)
+  //   background-color: lighten($second-color, 5%)
+  //   box-shadow: 0 10px 30px rgba($second-color, 0.7)
+  // &:active
+  //   background-color: lighten($second-color, 10%)
+  //   transform: scale(.98)
+  // &:focus
+  //   box-shadow: 0px 1px 0px $main-color, 0px -1px 0px $main-color, 1px 0px 0px $main-color, -1px 0px 0px $main-color
 
 @media (max-width: 1200px)
   .container
@@ -77,3 +71,133 @@ input.error
   .container
     max-width: 750px
     width: 90%
+
+.menu
+  position: relative
+  top: 0
+  right: 0
+  z-index: 15
+  width: 40px
+  height: 40px
+  & a.target-burger
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+    transition: .3s
+    &:hover
+      cursor: pointer
+      opacity: .7
+    & ul.buns
+      margin: 10px
+      padding: 0
+      width: 20px
+      height: 20px
+      list-style: none
+      color: $bg-color
+      transition: transform 1s cubic-bezier(.23,1,.32,1),color 1s cubic-bezier(.23,1,.32,1)
+      transform: translateZ(0)
+      & li
+        &.bun
+          position: absolute
+          top: 50%
+          width: 100%
+          height: 2px
+          border-radius: 2px
+          background-color: $main-color
+          transform: translateY(-3px) translateZ(0)
+          transition: 500ms background cubic-bezier(0.19, 1, 0.22, 1), 500ms margin-top cubic-bezier(0.19, 1, 0.22, 1), 500ms margin-bottom cubic-bezier(0.19, 1, 0.22, 1), 500ms transform cubic-bezier(0.19, 1, 0.22, 1) 83ms
+          &:last-child
+            transform: translateY(3px) translateZ(0)
+    &.toggled
+      ul.buns
+        li.bun
+          background-color: $bg-color
+          transform: rotate(45deg) translateZ(0)
+          &:last-child
+            transform: rotate(-45deg) translateZ(0)
+nav
+  &.main-nav
+  position: absolute
+  top: 5px
+  right: 0
+  z-index: 0
+  height: 275px
+  width: 275px
+  padding: 30px
+  background-color: $main-color
+  opacity: 0
+  visibility: hidden
+  transform: scale(0.85)
+  transition: .3s
+  &.toggled
+    display: block
+    z-index: 10
+    transform: scale(1)
+    opacity: 1
+    visibility: inherit
+    transition: .3s
+  & ul
+    margin: 28px 0 0
+    & li
+      display: flex
+      & a.item
+        position: relative
+        font-size: 22px
+        text-decoration: none
+        color: $bg-color
+        padding: 12px 0
+        font-weight: 300
+        display: block
+        transition: .3s
+        &:hover
+          opacity: 0.7
+        &:after 
+          content: ""
+          display: block
+          position: absolute
+          right: 0
+          bottom: 23px
+          width: 0
+          height: 2px
+          background-color: $bg-color
+          transition: width .3s
+        &:hover:after 
+          content: ""
+          width: 100%
+          display: block
+          position: absolute
+          left: 0
+          bottom: 23px
+          height: 2px
+          background-color: $bg-color
+          transition: width .3s
+        &.email
+          margin-top: 57px
+          font-size: 16px
+          text-decoration: underline
+          &:after
+            content: none
+
+@media (max-width: 425px)
+  .menu
+    right: -6px
+  nav
+    &.main-nav
+      position: fixed
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      padding: 53px
+      & ul 
+        margin: 85px 0 0
+        & li a.item
+          padding: 22px 0
+          &:after 
+            bottom: 33px
+          &:hover:after 
+            bottom: 33px
+          &.email
+            margin-top: 190px
