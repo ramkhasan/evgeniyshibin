@@ -1,0 +1,55 @@
+.project
+  &-item 
+    position: relative
+    display: flex
+    flex-direction: column
+    padding: 30px 35px 62px 95px
+    margin-bottom: 100px
+    max-width: 825px
+    width: 100%
+    height: auto
+    background-color: rgba(30, 33, 40, 0.025)
+    border-radius: 8px
+    &:last-child
+      margin-bottom: 80px
+    &__img
+      position: relative
+      height: 405px
+      width: 100%
+      margin-bottom: 14px
+    &__text 
+      display: flex
+      flex-direction: column
+    &__title 
+      max-width: 540px
+      width: 100%
+      font-size: 18px
+      line-height: 24px
+    &__subtitle 
+      margin-bottom: 14px
+      max-width: 540px
+      width: 100%
+      font-size: 14px
+      opacity: 0.5
+
+@media (max-width: 768px)
+  .project 
+    &-item 
+      padding: 0
+      background-color: $bg-color
+      &:last-child
+        margin-bottom: 100px
+      &__img
+        height: 360px
+        margin-bottom: 70px
+      &__title 
+        +black 
+        line-height: 26px
+      &__subtitle 
+        max-width: 240px
+        font-size: 12px
+@media (max-width: 490px)
+  .project 
+    &-item 
+      &__img
+        height: 270px
