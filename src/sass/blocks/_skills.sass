@@ -1,0 +1,29 @@
+.skills 
+  background-color: rgba(30, 33, 40, 0.025)
+  &-item 
+    margin-bottom: 22px
+    display: flex
+    flex-direction: column 
+    border-bottom: 1px solid rgba(30, 33, 40, 0.1)
+    &:last-child
+      margin-bottom: 0 
+    &__title 
+      margin-bottom: 15px
+      +med
+      font-size: 18px
+    &__description 
+      margin-bottom: 17px 
+      +med
+      font-size: 14px 
+      line-height: 24px
+      color: rgba(30, 33, 40, 0.6)
+
+@media ( max-width: 425px )
+  .skills 
+    &-item 
+      margin-bottom: 30px 
+      &__title 
+        margin-bottom: 26px 
+        font-size: 20px 
+
+  

@@ -6,16 +6,17 @@ body
   height: 100%
   background: $bg-color
   font-family: 'Inter Regular', sans-serif
+h1, h2, h3 
+  margin: 0 
+  font-weight: normal 
+p 
+  margin: 0 
 img
   max-width: 100%
 main 
   position: relative
   overflow: hidden
 ul, ol 
-  margin: 0
-  padding: 0
-  list-style: none
-nav ul, nav ol 
   margin: 0
   padding: 0
   list-style: none
@@ -33,7 +34,6 @@ nav ul, nav ol
     padding-bottom: 74px
 .link 
   position: relative
-  margin-left: 95px
   padding-bottom: 2px
   z-index: 0
   display: inline-block
@@ -120,68 +120,69 @@ nav ul, nav ol
             transform: rotate(-45deg) translateZ(0)
 nav
   &.main-nav
-  position: absolute
-  top: 5px
-  right: 0
-  z-index: 0
-  height: 275px
-  width: 275px
-  padding: 30px
-  background-color: $main-color
-  opacity: 0
-  visibility: hidden
-  transform: scale(0.85)
-  transition: .3s
-  &.toggled
-    display: block
-    z-index: 10
-    transform: scale(1)
-    opacity: 1
-    visibility: inherit
+    position: absolute
+    top: 5px
+    right: 0
+    z-index: 0
+    height: 275px
+    width: 275px
+    padding: 30px
+    background-color: $main-color
+    opacity: 0
+    visibility: hidden
+    transform: scale(0.85)
     transition: .3s
-  & ul
-    margin: 28px 0 0
-    & li
-      display: flex
-      & a.item
-        position: relative
-        font-size: 22px
-        text-decoration: none
-        color: $bg-color
-        padding: 12px 0
-        font-weight: 300
-        display: block
-        transition: .3s
-        &:hover
-          opacity: 0.7
-        &:after 
-          content: ""
+    &.toggled
+      display: block
+      z-index: 10
+      transform: scale(1)
+      opacity: 1
+      visibility: inherit
+      transition: .3s
+    & ul
+      margin: 28px 0 0
+      & li
+        display: flex
+        & a.item
+          position: relative
+          font-size: 22px
+          text-decoration: none
+          color: $bg-color
+          padding: 12px 0
+          font-weight: 300
           display: block
-          position: absolute
-          right: 0
-          bottom: 23px
-          width: 0
-          height: 2px
-          background-color: $bg-color
-          transition: width .3s
-        &:hover:after 
-          content: ""
-          width: 100%
-          display: block
-          position: absolute
-          left: 0
-          bottom: 23px
-          height: 2px
-          background-color: $bg-color
-          transition: width .3s
-        &.email
-          margin-top: 57px
+          transition: .3s
+          &:hover
+            opacity: 0.7
+          &:after 
+            content: ""
+            display: block
+            position: absolute
+            right: 0
+            bottom: 23px
+            width: 0
+            height: 2px
+            background-color: $bg-color
+            transition: width .3s
+          &:hover:after 
+            content: ""
+            width: 100%
+            display: block
+            position: absolute
+            left: 0
+            bottom: 23px
+            height: 2px
+            background-color: $bg-color
+            transition: width .3s
+        & a.link
+          margin-top: 70px
+          color: $white-color
           font-size: 16px
-          text-decoration: underline
-          &:after
-            content: none
+          &:before 
+            background: $white-color
+          &:after 
+            background: $white-color
 .swiper 
-  // position: absolute !important
   width: 1110px !important
   height: 405px
   &-slide 
@@ -225,9 +226,7 @@ nav
 @media (max-width: 768px)
   .container
     max-width: 580px
-    width: 90%
-  .link 
-    margin-left: 0
+    width: 90% 
   .swiper 
     width: 100% !important
     height: 360px
