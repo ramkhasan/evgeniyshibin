@@ -7,16 +7,30 @@
     border-bottom: 1px solid rgba(30, 33, 40, 0.1)
     &:last-child
       margin-bottom: 0 
+    &.about 
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1)
     &__title 
       margin-bottom: 15px
       +med
       font-size: 18px
+      &.about 
+        display: flex 
+        justify-content: space-between 
+        align-items: center
+        & span 
+          // +semibold 
+          font-size: 12px 
     &__description 
       margin-bottom: 17px 
       +med
       font-size: 14px 
       line-height: 24px
       color: rgba(30, 33, 40, 0.6)
+      &.about 
+        color: rgba(255, 255, 255, 0.4)
+  &.about 
+    background-color: $main-color 
+    color: $white-color
 
 @media ( max-width: 425px )
   .skills 
@@ -25,5 +39,17 @@
       &__title 
         margin-bottom: 26px 
         font-size: 20px 
-
-  
+        &.about
+          align-items: flex-start
+          flex-flow: column-reverse 
+          margin-bottom: 28px
+          font-size: 16px
+          & span 
+            margin-bottom: 15px 
+            +light 
+            color: rgba(255, 255, 255, 0.4) 
+      &__description 
+        &.about 
+          margin-bottom: 12px
+          font-size: 12px 
+          line-height: 22px

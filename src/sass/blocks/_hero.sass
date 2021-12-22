@@ -2,23 +2,41 @@
   &-block 
     margin: 115px 0 0
   &-text 
+    &.about 
+      margin-left: 380px
     &__title 
       max-width: 1010px
       margin-bottom: 33px
       +black
       font-size: 48px
       line-height: 68px
+      &.about 
+        margin-bottom: 20px
+        +reg 
+        font-size: 30px 
+        line-height: 48px 
     &__description
       max-width: 800px
       margin-bottom: 66px
       font-size: 18px
       line-height: 28px
+      &.about 
+        margin-bottom: 0 
+        color: rgba(30, 33, 40, 0.6) 
+        +med 
+        font-size: 14px 
+        line-height: 24px
   &-link 
     margin-left: 95px
 
+@media (max-width: 1200px)
+  .hero-text.about 
+    margin-left: 0
 @media (max-width: 768px)
   .hero 
     &-text 
+      &.about 
+        margin-bottom: 100px
       &__title 
         font-size: 34px
         line-height: 50px
@@ -37,6 +55,10 @@
         margin-bottom: 18px
         font-size: 24px
         line-height: 40px
+        &.about 
+          +med 
+          font-size: 20px 
+          line-height: 40px 
       &__description 
         font-size: 14px
         line-height: 24px

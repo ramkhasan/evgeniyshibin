@@ -182,6 +182,64 @@ nav
             background: $white-color
           &:after 
             background: $white-color
+.dropdown 
+  display: block
+  max-width: 715px
+  width: 100%
+  margin: auto
+  & + .dropdown 
+    margin-top: 30px
+.dropdown__top 
+  display: flex
+  justify-content: space-between
+  align-items: center
+  color: $main-color
+  // +bold
+  padding-left: 28px
+  box-sizing: border-box
+  cursor: pointer
+  will-change: background
+  max-width: 476px
+  width: 100%
+  height: 30px
+  border-radius: 15px
+  border: 1px solid rgba($main-color, 0.15)
+  &:after 
+    content: '\e802'
+    font: 18px fontello
+    color: $main-color
+    padding: 9px 10px
+    border-radius: 50%
+    box-shadow: 0 10px 25px rgba($main-color, 0.6)
+    background-image: linear-gradient(to top, $main-color 0%, $main-color 100%)
+.open .dropdown__top
+  border-top: 1px solid $main-color
+  border-left: 1px solid $main-color
+  border-right: 1px solid $main-color
+  border-bottom: none
+  border-radius: 15px 15px 0 0
+.open .dropdown__top::after 
+  content: '\e803'
+  font: 18px fontello
+  color: $main-color
+  padding: 9px 10px
+  border-radius: 50%
+  box-shadow: 0 10px 25px rgba(25, 25, 35, 0.3)
+  background-image: linear-gradient($black-color)
+.dropdown__btm 
+  max-width: 476px
+  width: 100%
+  font-size: 14px
+  line-height: 20px
+  box-sizing: border-box
+  padding: 15px 30px 8px 30px
+  display: none
+  border-left: 1px solid $main-color 
+  border-right: 1px solid $main-color 
+  border-bottom: 1px solid $main-color 
+  border-radius: 0 0 15px 15px
+.close .dropdown__btm 
+  border: none
 .swiper 
   width: 1110px !important
   height: 405px
@@ -239,6 +297,17 @@ nav
   .swiper-button-next:after, .swiper-button-prev:after
     font-size: 14px !important
     font-weight: 600
+@media (max-width: 650px)
+  .dropdown 
+    &__top 
+      height: auto
+      padding: 3px 25px 5px 28px
+      line-height: 20px
+      &:after 
+        position: absolute
+        right: 14px
+    &__btm 
+      padding: 15px 23px 5px 28px
 @media (max-width: 490px)
   .section
     &-title
