@@ -73,6 +73,8 @@ ul, ol
     &:after 
       opacity: 0
       transition: 126ms opacity cubic-bezier(0.165, 0.84, 0.44, 1)
+
+// Menu
 .menu
   position: relative
   top: 0
@@ -182,64 +184,51 @@ nav
             background: $white-color
           &:after 
             background: $white-color
+
+// Accordion
 .dropdown 
-  display: block
-  max-width: 715px
   width: 100%
-  margin: auto
   & + .dropdown 
-    margin-top: 30px
-.dropdown__top 
-  display: flex
-  justify-content: space-between
-  align-items: center
-  color: $main-color
-  // +bold
-  padding-left: 28px
-  box-sizing: border-box
-  cursor: pointer
-  will-change: background
-  max-width: 476px
-  width: 100%
-  height: 30px
-  border-radius: 15px
-  border: 1px solid rgba($main-color, 0.15)
-  &:after 
-    content: '\e802'
-    font: 18px fontello
-    color: $main-color
-    padding: 9px 10px
-    border-radius: 50%
-    box-shadow: 0 10px 25px rgba($main-color, 0.6)
-    background-image: linear-gradient(to top, $main-color 0%, $main-color 100%)
-.open .dropdown__top
-  border-top: 1px solid $main-color
-  border-left: 1px solid $main-color
-  border-right: 1px solid $main-color
-  border-bottom: none
-  border-radius: 15px 15px 0 0
-.open .dropdown__top::after 
-  content: '\e803'
-  font: 18px fontello
-  color: $main-color
-  padding: 9px 10px
-  border-radius: 50%
-  box-shadow: 0 10px 25px rgba(25, 25, 35, 0.3)
-  background-image: linear-gradient($black-color)
-.dropdown__btm 
-  max-width: 476px
-  width: 100%
-  font-size: 14px
-  line-height: 20px
-  box-sizing: border-box
-  padding: 15px 30px 8px 30px
-  display: none
-  border-left: 1px solid $main-color 
-  border-right: 1px solid $main-color 
-  border-bottom: 1px solid $main-color 
-  border-radius: 0 0 15px 15px
-.close .dropdown__btm 
-  border: none
+    margin-top: 40px
+  &__top 
+    max-width: 720px
+    width: 100%
+    color: $white-color
+    font-size: 24px 
+    line-height: 29px 
+    cursor: pointer
+    transition: 0.67s color 
+    & em 
+      display: inline-block 
+      margin: 7px 13px
+      width: 8px
+      height: 8px
+      border-left: 2px solid rgba(249, 249, 249, 0.3)
+      border-top: 2px solid rgba(249, 249, 249, 0.3)
+      transform: translate3d(0, 0, 0) rotate(-135deg)
+      transform-origin: 50% 50%
+      transition: 0.67s border-color, 0.67s transform cubic-bezier(0.19, 1, 0.22, 1)
+    &:hover 
+      color: rgba(255, 255, 255, 0.4)
+      &.dropdown__top em 
+        border-color: rgba(255, 255, 255, 0.5)
+  &.open 
+    & em 
+      transform: translate3d(0, 4px, 0) rotate(45deg)
+    & .dropdown__btm 
+      opacity: 1
+  &__btm 
+    display: none
+    width: 100% 
+    padding: 34px 0 0 
+    color: rgba(255, 255, 255, 0.4)
+    font-family: 'Inter Medium', sans-serif
+    font-size: 14px
+    line-height: 24px 
+    opacity: 0
+    transition: opacity .6s ease 0s 
+
+// Slider
 .swiper 
   width: 1110px !important
   height: 405px
@@ -269,7 +258,6 @@ nav
 .swiper-button-next:after, .swiper-button-prev:after
   font-size: 30px !important
   
-
 @media (min-width: 1440px)
   .swiper 
     width: 1680px !important
@@ -297,17 +285,6 @@ nav
   .swiper-button-next:after, .swiper-button-prev:after
     font-size: 14px !important
     font-weight: 600
-@media (max-width: 650px)
-  .dropdown 
-    &__top 
-      height: auto
-      padding: 3px 25px 5px 28px
-      line-height: 20px
-      &:after 
-        position: absolute
-        right: 14px
-    &__btm 
-      padding: 15px 23px 5px 28px
 @media (max-width: 490px)
   .section
     &-title
@@ -342,6 +319,14 @@ nav
             bottom: 33px
           &.email
             margin-top: 190px
+  .dropdown 
+    & + .dropdown 
+      margin-top: 28px
+    &__top 
+      font-size: 18px 
+      line-height: 22px 
+    &__btm 
+      padding: 25px 0 0
   .swiper 
     left: -22px
     width: 112% !important

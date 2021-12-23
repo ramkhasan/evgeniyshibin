@@ -1,9 +1,13 @@
 .hero 
   &-block 
     margin: 115px 0 0
+    &.about 
+      display: flex 
+      justify-content: end 
   &-text 
     &.about 
-      margin-left: 380px
+      max-width: 730px
+      width: 100%
     &__title 
       max-width: 1010px
       margin-bottom: 33px
@@ -31,7 +35,7 @@
 
 @media (max-width: 1200px)
   .hero-text.about 
-    margin-left: 0
+    max-width: 760px
 @media (max-width: 768px)
   .hero 
     &-text 
